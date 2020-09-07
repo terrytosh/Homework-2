@@ -1,12 +1,17 @@
 #include <iostream>
-#include "search.h"
+#include "dictionary.h"
 
 int main() {
-  int list[] = {1,2,4,5,6,7,8,9,10};
-  int array_length = 9;
-  int number = 4;
-  
-  std::cout << "Linear Search: " << LinearSearch(list,array_length,number) <<  std::endl;
+  std::string words[] = {"pineapple, apple, couch, yourmom, reallylongword"};
 
-  std::cout << "Binary Search: " << BinarySearch(list,array_length,number) <<  std::endl;
+  int min_word_length = MinWordLength(words, 5);
+  std::cout << "Min length: " << min_word_length << std::endl;
+
+  int max_word_length = MaxWordLength(words, 5);
+  std::cout << "Max length: " << max_word_length << std::endl;
+
+  int avg_word_length = AverageWordLength(words, 5);
+  std::cout << "Avg length: " << avg_word_length << std::endl;
+
+  return 0;
 }
