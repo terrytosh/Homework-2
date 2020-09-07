@@ -25,50 +25,49 @@ Return the sum divided by the length to get the average word length
 *
 */
 #include "dictionary.h"
+#include <iostream>
+#include <cassert>
 using namespace std;
 
 int MinWordLength(string words[], int length) {
-    int min = 0;
-
-    for(int i = 0; i < length; i++){
+    assert(length > 0);
+    int min = words[0].length();
+    
+    for(int i = 1; i < length; i++){
       if(words[i].length() < min){
         min = words[i].length();
       }
     }
-
-    //throw "Unsupported Operation";
     return min;
 }
 
 int MaxWordLength(string words[], int length) {
-   int max = 0;
-
-    for(int i = 0; i < length; i++){
+    assert(length > 0);
+    int max = words[0].length();
+    
+    for(int i = 1; i < length; i++){
       if(words[i].length() > max){
         max = words[i].length();
       }
     }
-
-    //throw "Unsupported Operation";
     return max;
 }
 
 int WordLengthRange(string words[], int length) {
-    throw "Unsupported Operation";
+  throw "Unsupported Operation";
 }
 
 int AverageWordLength(string words[], int length) {
+    assert(length > 0);
     int sum = 0;
 
     for(int i = 0; i < length; i++){
       sum += words[i].length();
     }
 
-    //throw "Unsupported Operation";
     return sum / length;
 }
 
 int MostCommonWordLength(string words[], int length) {
-    // TODO implement this function
-    throw "Unsupported Operation";
+  throw "Unsupported Operation";
 }
