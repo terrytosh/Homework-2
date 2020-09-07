@@ -17,11 +17,17 @@ to the current string's length
 Return max
 
 WordLengthRange:
+Initialize a variable to store the word length range
+Call MaxWordLength() - MinWordLength(), both with the parameters
+used to call WordLengthRange()
+Return range
 
 AverageWordLength:
 Initialize a variable sum to store the total amount of characters in the list of words
 Iterate through the list adding the lengths of each word to sum
 Return the sum divided by the length to get the average word length
+
+MostCommonWordLength:
 *
 */
 #include "dictionary.h"
@@ -54,7 +60,10 @@ int MaxWordLength(string words[], int length) {
 }
 
 int WordLengthRange(string words[], int length) {
-  throw "Unsupported Operation";
+    assert(length > 0);
+    int range = MaxWordLength(words, length) - MinWordLength(words, length);
+
+    return range;
 }
 
 int AverageWordLength(string words[], int length) {
